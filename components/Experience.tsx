@@ -43,31 +43,46 @@ const Experience: React.FC = () => {
 
   // Scroll listener to drive the line height
   useEffect(() => {
+    let rafId: number | null = null;
+
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (rafId !== null) return; // Prevent multiple RAF calls
 
-      const viewportHeight = window.innerHeight;
-      // Trigger slightly below center (55%) to make elements appear a bit earlier on scroll
-      const triggerPoint = viewportHeight * 0.55; 
-      
-      const container = containerRef.current;
-      const rect = container.getBoundingClientRect();
-      
-      // Calculate position of the "pen" inside the container
-      // rect.top is distance from viewport top to container top
-      // We want the distance from container top to trigger point
-      const relativeY = triggerPoint - rect.top;
+      rafId = requestAnimationFrame(() => {
+        if (!containerRef.current) {
+          rafId = null;
+          return;
+        }
 
-      // Clamp the height between 0 and the full height of container
-      const clampedHeight = Math.max(0, Math.min(rect.height, relativeY));
-      
-      setLineHeight(clampedHeight);
+        const viewportHeight = window.innerHeight;
+        // Trigger slightly below center (55%) to make elements appear a bit earlier on scroll
+        const triggerPoint = viewportHeight * 0.55;
+
+        const container = containerRef.current;
+        const rect = container.getBoundingClientRect();
+
+        // Calculate position of the "pen" inside the container
+        // rect.top is distance from viewport top to container top
+        // We want the distance from container top to trigger point
+        const relativeY = triggerPoint - rect.top;
+
+        // Clamp the height between 0 and the full height of container
+        const clampedHeight = Math.max(0, Math.min(rect.height, relativeY));
+
+        setLineHeight(clampedHeight);
+        rafId = null;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   return (
@@ -82,8 +97,8 @@ const Experience: React.FC = () => {
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-800 transform -translate-x-1/2 rounded-full" />
           
           {/* The Timeline Thread (Foreground - Dynamic) */}
-          <div 
-            className="absolute left-8 md:left-1/2 top-0 w-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] transform -translate-x-1/2 rounded-full transition-all duration-100 ease-out z-10"
+          <div
+            className="absolute left-8 md:left-1/2 top-0 w-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] transform -translate-x-1/2 rounded-full z-10"
             style={{ height: `${lineHeight}px` }}
           />
 
