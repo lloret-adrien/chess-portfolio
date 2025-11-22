@@ -3,10 +3,10 @@ import { Project, ExperienceItem } from './types';
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Stealth Project",
+    title: "IA Project",
     role: "Founder & Full-stack Developer",
     time: "Ongoing",
-    description: "AI-powered SaaS that automatically selects the --------------- and organizes them into structured projects.",
+    description: "AI-powered SaaS that automatically extracts the best --------------- and organizes them.",
     tech: ["Nuxt", "Vue", "Supabase", "Python", "FastAPI", "Stripe"],
     image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop", // Abstract Code/Dark
     link: null
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
     time: "2 days",
     description: "Immersive 3D portfolio showcasing experimental design, visual storytelling and advanced motion to highlight personal branding.",
     tech: ["Vue", "Three.js", "GSAP"],
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop", // Abstract 3D
+    image: "/images/3D.png", // Abstract 3D
     link: "https://adrien-lloret.netlify.app/"
   },
   {
@@ -27,8 +27,8 @@ export const PROJECTS: Project[] = [
     role: "Web Integrator",
     time: "6 months",
     description: "Contribution to a community-driven platform enabling users to create hubs, manage groups and sell digital products.",
-    tech: ["Vue", "Inertia.js", "Laravel", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1974&auto=format&fit=crop", // Dark Dashboard/Platform
+    tech: ["Vue", "Inertia.js", "Laravel", "Tailwind"],
+    image: "/images/slym.png", // Dark Dashboard/Platform
     link: "https://slym.co/"
   },
   {
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     time: "4 days",
     description: "Integration of a modern and immersive landing page for a travel and maritime adventure project.",
     tech: ["Vue", "GSAP", "Swiper", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=2070&auto=format&fit=crop", // Cinematic/Blue/Character vibe
+    image: "/images/last.png",
     link: "https://last-sailors.netlify.app/"
   },
   {
@@ -48,7 +48,7 @@ export const PROJECTS: Project[] = [
     time: "1 week",
     description: "Design and integration of a dynamic showcase website for a digital agency with a premium visual approach.",
     tech: ["Vue", "GSAP", "Swiper", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2070&auto=format&fit=crop", // Dark/Green/Digital/Matrix
+    image: "/images/devium.png",
     link: "https://devium.netlify.app/"
   },
   {
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
     time: "1 year",
     description: "Integration and optimisation of a catering platform website focused on clarity, performance and conversion.",
     tech: ["ForestAdmin", "Redis", "Playwright", "AdonisJS"],
-    image: "https://images.unsplash.com/photo-1565514020176-87088c07030d?q=80&w=2670&auto=format&fit=crop", // Food/Catering Bright
+    image: "/images/mycater.png",
     link: "https://mycater.fr/"
   }
 ];
