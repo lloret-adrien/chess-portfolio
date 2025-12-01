@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
       {/* Start Game Decorative Element - Fixed & Animated Line */}
       <div className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 delay-1000 ${reveal ? 'opacity-70' : 'opacity-0'}`}>
         <div className="flex flex-col items-center gap-4 mt-12">
-          <span className="text-xs tracking-[0.3em] text-gray-400 uppercase">Start Game</span>
+          <span className="text-xs tracking-[0.3em] text-gray-400 uppercase animate-pulse">Start Game</span>
           <div className="w-[1px] h-16 bg-gray-800 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-gray-400 animate-scroll-line"></div>
+            <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-transparent via-gray-300 to-white animate-scroll-line"></div>
           </div>
         </div>
       </div>
