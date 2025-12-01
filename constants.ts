@@ -3,13 +3,13 @@ import { Project, ExperienceItem } from './types';
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "IA Project",
+    title: "BestFrame AI",
     role: "Founder & Full-stack Developer",
     time: "Ongoing",
-    description: "AI-powered SaaS that automatically extracts the best --------------- and organizes them.",
+    description: "AI-powered SaaS that automatically extracts the best moments from videos",
     tech: ["Nuxt", "Vue", "Supabase", "Python", "FastAPI", "Stripe"],
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop", // Abstract Code/Dark
-    link: null
+    image: "/images/bestframe2.png", // AI Video
+    link: "https://bestframe.pro/"
   },
   {
     id: 2,

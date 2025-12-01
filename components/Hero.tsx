@@ -15,7 +15,11 @@ const Hero: React.FC = () => {
         
         {/* Top Badge */}
         <div className={`inline-block px-6 py-2 rounded-full glass-panel mb-12 transition-all duration-1000 delay-100 transform ${reveal ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-          <span className="text-sm text-gray-300 tracking-widest uppercase">Strategic Digital Solutions</span>
+          <span className="flex items-center gap-2 text-sm text-gray-300 tracking-widest uppercase">
+            <span className="block rounded-full w-2 h-2 bg-green-500 animate-pulse"></span>
+            <span className="absolute block rounded-full w-2 h-2 bg-green-500 animate-ping"></span>
+            Available
+          </span>
         </div>
 
         {/* Name Title - "Chess Board Reveal" Simulation */}
