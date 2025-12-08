@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     description: "Immersive 3D portfolio showcasing experimental design, visual storytelling and advanced motion to highlight personal branding.",
     tech: ["Vue", "Three.js", "GSAP"],
     image: "/images/3D.png", // Abstract 3D
-    link: "https://adrien-lloret.netlify.app/"
+    link: "https://adrien-3d.netlify.app/"
   },
   {
     id: 3,

@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import NomadMap from './components/NomadMap';
 import Mindset from './components/Mindset';
 import Contact from './components/Contact';
+import { useClarity } from './hooks/useClarity';
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,10 +45,15 @@ const ScrollToTop: React.FC = () => {
 };
 
 function App() {
+  // Initialize Microsoft Clarity
+  // Get your project ID from https://clarity.microsoft.com/
+  const CLARITY_PROJECT_ID = import.meta.env.VITE_CLARITY_PROJECT_ID || '';
+  useClarity(CLARITY_PROJECT_ID);
+
   return (
     <div className="min-h-screen w-full bg-transparent text-gray-200 font-sans selection:bg-amber-500/30">
       <ChessBackground />
-      
+
       <main className="relative z-10">
         <Hero />
         <Projects />
@@ -56,7 +62,7 @@ function App() {
         <Mindset />
         <Contact />
       </main>
-      
+
       <ScrollToTop />
     </div>
   );
